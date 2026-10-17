@@ -1,0 +1,67 @@
+#!/bin/sh
+# Branding de GALAXIUMOS dentro del chroot
+set -e
+
+cat > /etc/os-release <<'EOF'
+PRETTY_NAME="GALAXIUMOS 1.0 (Aqua)"
+NAME="GALAXIUMOS"
+VERSION_ID="1.0"
+VERSION="1.0 (Aqua)"
+VERSION_CODENAME=aqua
+ID=galaxiumos
+ID_LIKE=debian
+HOME_URL="https://galaxiumos.example"
+EOF
+
+echo "GALAXIUMOS 1.0 (Aqua) \n \l" > /etc/issue
+echo "GALAXIUMOS 1.0 (Aqua)" > /etc/issue.net
+echo "galaxiumos" > /etc/hostname
+
+# Usuario live
+if ! id galaxium >/dev/null 2>&1; then
+  useradd -m -s /bin/bash -G sudo,audio,video,netdev,plugdev galaxium
+  echo "galaxium:galaxium" | chpasswd
+fi
+
+# Autostart de compositor (transparencias/vidrio) y dock
+mkdir -p /etc/skel/.config/autostart
+cat > /etc/skel/.config/autostart/picom.desktop <<'EOF'
+[Desktop Entry]
+Type=Application
+Name=Picom
+Exec=picom -b
+EOF
+cat > /etc/skel/.config/autostart/plank.desktop <<'EOF'
+[Desktop Entry]
+Type=Application
+Name=Plank
+Exec=plank
+EOF
+
+cat > /etc/skel/.config/picom.conf <<'EOF'
+backend = "glx";
+vsync = true;
+shadow = true;
+shadow-radius = 18;
+shadow-opacity = 0.35;
+shadow-offset-x = -12;
+shadow-offset-y = -12;
+shadow-color = "#0a4a78";
+corner-radius = 10;
+fading = true;
+fade-in-step = 0.05;
+fade-out-step = 0.05;
+blur-method = "dual_kawase";
+blur-strength = 6;
+inactive-opacity = 0.92;
+frame-opacity = 0.85;
+opacity-rule = [ "88:class_g = 'Xfce4-terminal'", "92:class_g = 'Plank'" ];
+EOF
+
+# Firefox como navegador nativo del sistema
+update-alternatives --set x-www-browser /usr/bin/firefox-esr 2>/dev/null || true
+update-alternatives --set gnome-www-browser /usr/bin/firefox-esr 2>/dev/null || true
+
+# Tema de iconos y GTK por defecto
+glib-compile-schemas /usr/share/glib-2.0/schemas 2>/dev/null || true
+update-initramfs -u 2>/dev/null || true

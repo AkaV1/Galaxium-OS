@@ -1,0 +1,14 @@
+{
+  "policies": {
+    "DontCheckDefaultBrowser": true,
+    "OverrideFirstRunPage": "",
+    "OverridePostUpdatePage": "",
+    "DisableTelemetry": true,
+    "NoDefaultBookmarks": false,
+    "Homepage": {
+      "URL": "about:home",
+      "StartPage": "homepage"
+    },
+    "DisplayBookmarksToolbar": "never"
+  }
+}

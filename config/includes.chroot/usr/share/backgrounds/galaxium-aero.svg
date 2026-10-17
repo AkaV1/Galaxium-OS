@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0b7fd6"/>
+      <stop offset="0.45" stop-color="#4cc3f5"/>
+      <stop offset="0.75" stop-color="#b8ecff"/>
+      <stop offset="1" stop-color="#e9fbff"/>
+    </linearGradient>
+    <radialGradient id="sun" cx="0.78" cy="0.12" r="0.5">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.95"/>
+      <stop offset="0.35" stop-color="#d6f6ff" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="hill1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#7be04a"/>
+      <stop offset="1" stop-color="#2f9e2f"/>
+    </linearGradient>
+    <linearGradient id="hill2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#a6f06a"/>
+      <stop offset="1" stop-color="#3fb83a"/>
+    </linearGradient>
+    <radialGradient id="bubble" cx="0.35" cy="0.3" r="0.75">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.9"/>
+      <stop offset="0.45" stop-color="#bff0ff" stop-opacity="0.25"/>
+      <stop offset="1" stop-color="#3bb8f0" stop-opacity="0.35"/>
+    </radialGradient>
+    <linearGradient id="wave" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#ffffff" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="soft"><feGaussianBlur stdDeviation="14"/></filter>
+    <filter id="soft2"><feGaussianBlur stdDeviation="3"/></filter>
+  </defs>
+
+  <rect width="1920" height="1080" fill="url(#sky)"/>
+  <rect width="1920" height="1080" fill="url(#sun)"/>
+
+  <!-- nubes -->
+  <g fill="#ffffff" filter="url(#soft)" opacity="0.85">
+    <ellipse cx="320" cy="210" rx="230" ry="55"/>
+    <ellipse cx="470" cy="180" rx="150" ry="55"/>
+    <ellipse cx="1180" cy="140" rx="260" ry="48"/>
+    <ellipse cx="1330" cy="110" rx="160" ry="48"/>
+    <ellipse cx="1600" cy="330" rx="210" ry="42"/>
+  </g>
+
+  <!-- ondas de luz -->
+  <g fill="none" stroke="url(#wave)" stroke-width="3">
+    <path d="M-50 640 C 400 520, 900 760, 1400 600 S 1900 520, 2000 580"/>
+    <path d="M-50 700 C 450 580, 950 820, 1450 660 S 1900 600, 2000 640" opacity="0.7"/>
+    <path d="M-50 760 C 500 640, 1000 880, 1500 720 S 1900 680, 2000 700" opacity="0.45"/>
+  </g>
+
+  <!-- colinas -->
+  <path d="M0 800 C 300 700, 600 760, 900 790 S 1500 720, 1920 780 L1920 1080 L0 1080 Z" fill="url(#hill1)"/>
+  <path d="M0 900 C 350 820, 700 900, 1050 880 S 1600 830, 1920 880 L1920 1080 L0 1080 Z" fill="url(#hill2)"/>
+  <path d="M0 800 C 300 700, 600 760, 900 790 S 1500 720, 1920 780" fill="none" stroke="#ffffff" stroke-opacity="0.35" stroke-width="3" filter="url(#soft2)"/>
+
+  <!-- burbujas -->
+  <g fill="url(#bubble)" stroke="#ffffff" stroke-opacity="0.7" stroke-width="2">
+    <circle cx="250" cy="720" r="70"/>
+    <circle cx="430" cy="560" r="38"/>
+    <circle cx="640" cy="820" r="26"/>
+    <circle cx="980" cy="470" r="90"/>
+    <circle cx="1240" cy="700" r="46"/>
+    <circle cx="1500" cy="520" r="64"/>
+    <circle cx="1720" cy="760" r="34"/>
+    <circle cx="1810" cy="420" r="22"/>
+    <circle cx="140" cy="430" r="20"/>
+    <circle cx="820" cy="640" r="18"/>
+  </g>
+  <!-- brillos de burbujas -->
+  <g fill="#ffffff" fill-opacity="0.85">
+    <ellipse cx="228" cy="695" rx="26" ry="14" transform="rotate(-30 228 695)"/>
+    <ellipse cx="948" cy="436" rx="34" ry="17" transform="rotate(-30 948 436)"/>
+    <ellipse cx="1478" cy="496" rx="24" ry="12" transform="rotate(-30 1478 496)"/>
+    <ellipse cx="422" cy="548" rx="13" ry="7" transform="rotate(-30 422 548)"/>
+  </g>
+
+  <!-- estrellas aqua / galaxia -->
+  <g fill="#ffffff" opacity="0.9">
+    <path d="M1650 180 l8 22 22 8 -22 8 -8 22 -8 -22 -22 -8 22 -8z"/>
+    <path d="M740 120 l5 14 14 5 -14 5 -5 14 -5 -14 -14 -5 14 -5z"/>
+    <path d="M110 260 l5 14 14 5 -14 5 -5 14 -5 -14 -14 -5 14 -5z"/>
+  </g>
+</svg>

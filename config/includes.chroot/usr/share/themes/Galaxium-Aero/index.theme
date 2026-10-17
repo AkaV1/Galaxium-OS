@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=Galaxium-Aero
+Comment=Tema Frutiger Aero de GALAXIUMOS: vidrio, aqua y brillos
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+GtkTheme=Galaxium-Aero
+MetacityTheme=Galaxium-Aero
+IconTheme=Papirus

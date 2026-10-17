@@ -1,0 +1,44 @@
+# Escritorio
+xfce4
+xfce4-goodies
+xfce4-whiskermenu-plugin
+lightdm
+lightdm-gtk-greeter
+plank
+picom
+xfwm4
+
+# Aplicaciones base
+firefox-esr
+thunar
+mousepad
+xfce4-terminal
+file-roller
+ristretto
+vlc
+network-manager-gnome
+pavucontrol
+pulseaudio
+gvfs
+gvfs-backends
+
+# Fuentes e iconos
+fonts-noto
+fonts-noto-color-emoji
+fonts-open-sans
+fonts-dejavu
+papirus-icon-theme
+adwaita-icon-theme
+
+# Sistema
+sudo
+nano
+curl
+wget
+git
+htop
+neofetch
+plymouth
+plymouth-themes
+calamares
+calamares-settings-debian
